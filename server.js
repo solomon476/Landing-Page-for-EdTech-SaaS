@@ -103,5 +103,5 @@ app.get('/', (req, res) => {
 });
 
 app.listen(PORT, () => {
-    console.log(`somoBloom server is running on http://localhost:${PORT}`);
+    console.log(`SomoBloom server is running on http://localhost:${PORT}`);
 });

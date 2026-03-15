@@ -34,10 +34,10 @@ document.addEventListener('DOMContentLoaded', () => {
     
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
-            navbar.style.background = 'rgba(15, 23, 42, 0.95)';
-            navbar.style.boxShadow = '0 4px 30px rgba(0, 0, 0, 0.5)';
+            navbar.style.background = 'rgba(248, 250, 252, 0.98)';
+            navbar.style.boxShadow = '0 4px 30px rgba(0, 0, 0, 0.05)';
         } else {
-            navbar.style.background = 'rgba(15, 23, 42, 0.8)';
+            navbar.style.background = 'rgba(248, 250, 252, 0.85)';
             navbar.style.boxShadow = 'none';
         }
     });
@@ -241,7 +241,7 @@ document.addEventListener('DOMContentLoaded', () => {
     loginBtns.forEach(btn => {
         btn.addEventListener('click', (e) => {
             e.preventDefault();
-            alert('Authentication Required:\n\nThis landing page requires integration with your institution\'s somoBloom core backend database to process student/staff logins. Please connect the backend API.');
+            alert('Authentication Required:\n\nThis landing page requires integration with your institution\'s SomoBloom core backend database to process student/staff logins. Please connect the backend API.');
         });
     });
 });

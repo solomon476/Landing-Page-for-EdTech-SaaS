@@ -3,22 +3,22 @@
    ========================================================================= */
 
 :root {
-    /* Color Palette - Premium Modern Aesthetic */
-    --clr-bg: #0f172a;           /* Deep Slate Dark Mode Base */
-    --clr-surface: #1e293b;      /* Slightly lighter card surface */
-    --clr-surface-glass: rgba(30, 41, 59, 0.7);
-    --clr-text: #ffffff;         /* High contrast white */
-    --clr-text-muted: #cbd5e1;   /* Increased contrast for muted text (WCAG AA) */
+    /* Color Palette - Premium Light Aesthetic */
+    --clr-bg: #f8fafc;           /* Light Slate Base */
+    --clr-surface: #ffffff;      /* White card surface */
+    --clr-surface-glass: rgba(255, 255, 255, 0.85);
+    --clr-text: #0f172a;         /* High contrast dark text */
+    --clr-text-muted: #475569;   /* Muted dark text (WCAG AA) */
     
     /* Vibrant Accents */
-    --clr-primary: #8b5cf6;      /* Violet */
-    --clr-secondary: #3b82f6;    /* Blue */
+    --clr-primary: #3b82f6;      /* Bright Blue */
+    --clr-secondary: #0ea5e9;    /* Sky Blue */
     --clr-accent: #10b981;       /* Emerald */
     --clr-warning: #f59e0b;      /* Amber */
     
     /* Gradients */
     --gradient-primary: linear-gradient(135deg, var(--clr-primary), var(--clr-secondary));
-    --gradient-glass: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.02));
+    --gradient-glass: linear-gradient(135deg, rgba(255,255,255,0.7), rgba(255,255,255,0.2));
     
     /* Spacing */
     --spacing-xs: 0.5rem;
@@ -145,13 +145,13 @@ a {
 
 .btn-outline {
     background: transparent;
-    border-color: rgba(255, 255, 255, 0.2);
+    border-color: rgba(15, 23, 42, 0.2);
     color: var(--clr-text);
 }
 
 .btn-outline:hover {
-    background: rgba(255, 255, 255, 0.1);
-    border-color: rgba(255, 255, 255, 0.5);
+    background: rgba(15, 23, 42, 0.05);
+    border-color: rgba(15, 23, 42, 0.5);
 }
 
 .btn-large {
@@ -170,10 +170,10 @@ a {
     width: 100%;
     z-index: 1000;
     padding: 1rem 0;
-    background: rgba(15, 23, 42, 0.8);
+    background: rgba(248, 250, 252, 0.85); /* Light slate transparent */
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(15, 23, 42, 0.05); /* Dark subtle border */
 }
 
 .nav-content {
@@ -248,13 +248,13 @@ a {
     transform: translateY(0);
     opacity: 1;
     pointer-events: all;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(15, 23, 42, 0.1);
 }
 
 .mobile-link {
     font-size: 1.2rem;
     font-weight: 500;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(15, 23, 42, 0.1);
     padding-bottom: 1rem;
 }
 
@@ -278,8 +278,20 @@ a {
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -3;
+    z-index: -5; /* Placed behind the hexagons */
     overflow: hidden;
+}
+
+/* Overlay to blend the image into the light/white theme */
+.hero-carousel::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(248, 250, 252, 0.1); /* Very light to make images pop */
+    z-index: 1;
 }
 
 .carousel-slide {
@@ -293,6 +305,7 @@ a {
     background-repeat: no-repeat;
     opacity: 0;
     transition: opacity 1.5s ease-in-out;
+    z-index: 0;
 }
 
 .carousel-slide.active {
@@ -300,21 +313,9 @@ a {
     animation: zoomPan 30s infinite alternate cubic-bezier(0.45, 0.05, 0.55, 0.95);
 }
 
-.slide-1 { background-image: url('hero-bg.jpg'); }
+.slide-1 { background-image: url('hero-bg.png'); }
 .slide-2 { background-image: url('hero-bg-2.png'); }
 .slide-3 { background-image: url('hero-bg-3.png'); }
-
-/* Premium gradient overlay to ensure text readability against the bright image while maintaining depth */
-.hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(15, 23, 42, 0.65) 100%);
-    z-index: -2;
-}
 
 @keyframes zoomPan {
     0% {
@@ -323,6 +324,47 @@ a {
     100% {
         transform: scale(1.1) translate(-2%, 2%);
     }
+}
+
+/* Fading Blue Hexagon Wall Background */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Hexagon pattern via SVG data URI */
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='104' viewBox='0 0 60 104' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0L60 17.3v34.6L30 69.3 0 51.9V17.3zM30 104L0 86.7V52.1l30-17.3 30 17.3v34.6z' fill='%233b82f6' fill-opacity='0.10' fill-rule='evenodd'/%3E%3C/svg%3E");
+    background-size: 40px; /* Small hexagons to act as subtle texture */
+    z-index: -3;
+}
+
+/* Gradient Fade Overlay to blend hexagons into the solid white background below */
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Added radial glow behind text, and pushed the bottom fade lower */
+    background: 
+        radial-gradient(ellipse at 30% 50%, rgba(248, 250, 252, 0.95) 0%, rgba(248, 250, 252, 0.7) 35%, rgba(248, 250, 252, 0) 65%),
+        linear-gradient(to bottom, rgba(248, 250, 252, 0) 70%, rgba(248, 250, 252, 1) 98%);
+    z-index: -2;
+}
+
+/* Bright glow top-right for premium feel */
+.hero-bg-glow {
+    position: absolute;
+    top: -10%;
+    right: -10%;
+    width: 800px;
+    height: 800px;
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, rgba(248, 250, 252, 0) 70%);
+    filter: blur(60px);
+    z-index: -1;
 }
 
 .hero-bg-glow {
