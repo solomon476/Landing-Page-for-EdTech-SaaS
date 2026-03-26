@@ -197,6 +197,11 @@ a {
     font-size: 2rem;
 }
 
+.logo img {
+    height: 60px; /* Adjust height based on uploaded image shape */
+    width: auto;
+}
+
 .nav-links {
     display: flex;
     gap: 2rem;
