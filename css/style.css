@@ -318,9 +318,9 @@ a {
     animation: zoomPan 30s infinite alternate cubic-bezier(0.45, 0.05, 0.55, 0.95);
 }
 
-.slide-1 { background-image: url('hero-bg.png'); }
-.slide-2 { background-image: url('hero-bg-2.png'); }
-.slide-3 { background-image: url('hero-bg-3.png'); }
+.slide-1 { background-image: url('../img/gallery/photo-1.jpg'); }
+.slide-2 { background-image: url('../img/gallery/photo-2.jpg'); }
+.slide-3 { background-image: url('../img/gallery/photo-3.jpg'); }
 
 @keyframes zoomPan {
     0% {
