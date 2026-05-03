@@ -122,11 +122,11 @@ a {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 0.5rem;
-    padding: 0.75rem 1.5rem;
-    border-radius: var(--radius-full);
-    font-weight: 500;
-    font-size: 0.95rem;
+    gap: 0.75rem;
+    padding: 0.85rem 1.75rem;
+    border-radius: var(--radius-sm);
+    font-weight: 600;
+    font-size: 1rem;
     cursor: pointer;
     transition: all var(--transition-fast);
     border: 2px solid transparent;
@@ -156,7 +156,8 @@ a {
 
 .btn-large {
     padding: 1rem 2rem;
-    font-size: 1.1rem;
+    font-size: 1.15rem;
+    border-radius: var(--radius-sm);
 }
 
 /* =========================================================================
@@ -520,11 +521,11 @@ a {
     border: none;
     padding: 1.25rem 1rem;
     color: var(--clr-text-muted);
-    font-size: 1rem;
+    font-size: 1.05rem;
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
-    border-bottom: 2px solid transparent;
+    border-bottom: 3px solid transparent;
 }
 
 .auth-tab:hover {
@@ -546,7 +547,7 @@ a {
 .auth-form.active-form {
     display: flex;
     flex-direction: column;
-    gap: 1.25rem;
+    gap: 1.5rem;
 }
 
 .form-header {
@@ -568,7 +569,7 @@ a {
 .form-group {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 0.75rem;
     text-align: left;
 }
 
@@ -581,13 +582,13 @@ a {
 .form-group input,
 .form-group select {
     width: 100%;
-    padding: 0.85rem 1rem;
+    padding: 1rem 1.25rem;
     background: rgba(15, 23, 42, 0.6);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: var(--radius-sm);
     color: var(--clr-text);
     font-family: var(--font-body);
-    font-size: 0.95rem;
+    font-size: 1rem;
     transition: all var(--transition-fast);
 }
 
@@ -606,8 +607,11 @@ a {
 
 .btn-full {
     width: 100%;
-    margin-top: 1rem;
-    font-size: 1.05rem;
+    margin-top: 1.5rem;
+    padding: 1rem;
+    font-size: 1.15rem;
+    letter-spacing: 0.5px;
+    border-radius: var(--radius-sm);
 }
 
 .form-message {
