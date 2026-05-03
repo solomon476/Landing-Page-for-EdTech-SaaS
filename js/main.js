@@ -244,4 +244,44 @@ document.addEventListener('DOMContentLoaded', () => {
             alert('Authentication Required:\n\nThis landing page requires integration with your institution\'s SomoBloom core backend database to process student/staff logins. Please connect the backend API.');
         });
     });
+
+    // --- Typewriter Effect ---
+    const typewriterElement = document.getElementById('typewriter');
+    if (typewriterElement) {
+        const phrases = ["Grade Reporting", "Fee Collection", "JSS Transitions", "Compliance"];
+        let currentPhraseIndex = 0;
+        let currentCharIndex = 0;
+        let isDeleting = false;
+
+        function type() {
+            const currentPhrase = phrases[currentPhraseIndex];
+            
+            if (isDeleting) {
+                currentCharIndex--;
+            } else {
+                currentCharIndex++;
+            }
+            
+            typewriterElement.textContent = currentPhrase.substring(0, currentCharIndex);
+            
+            let typeSpeed = 100;
+            
+            if (isDeleting) {
+                typeSpeed /= 2;
+            }
+            
+            if (!isDeleting && currentCharIndex === currentPhrase.length) {
+                typeSpeed = 2000;
+                isDeleting = true;
+            } else if (isDeleting && currentCharIndex === 0) {
+                isDeleting = false;
+                currentPhraseIndex = (currentPhraseIndex + 1) % phrases.length;
+                typeSpeed = 500;
+            }
+            
+            setTimeout(type, typeSpeed);
+        }
+
+        setTimeout(type, 1000);
+    }
 });
