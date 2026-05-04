@@ -806,7 +806,7 @@ section {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
-    align-items: center;
+    align-items: stretch;
 }
 
 .curriculum-text h2 {
@@ -867,9 +867,13 @@ section {
     transition: transform var(--transition-slow), box-shadow var(--transition-slow);
 }
 
+.curriculum-visual {
+    height: 100%;
+}
+
 .curriculum-img {
     width: 100%;
-    height: auto;
+    height: 100%;
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow-soft);
     object-fit: cover;
