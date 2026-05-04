@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administration Portal - SomoBloom Africa</title>
+    <meta name="description" content="Detailed features and capabilities of the SomoBloom Administration Portal.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+    
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    
+    <link rel="icon" type="image/png" href="img/favicon.png">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .portal-detail-hero {
+            padding: 160px 0 80px;
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.05) 0%, rgba(16, 185, 129, 0.05) 100%);
+            text-align: center;
+        }
+        .portal-detail-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin: 60px 0;
+        }
+        .portal-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+        .gallery-item {
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-soft);
+            transition: transform 0.3s ease;
+        }
+        .gallery-item:hover {
+            transform: scale(1.02);
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--clr-primary);
+            font-weight: 600;
+            margin-bottom: 2rem;
+            transition: gap 0.3s ease;
+        }
+        .back-link:hover {
+            gap: 0.75rem;
+        }
+        @media (max-width: 992px) {
+            .portal-detail-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container nav-content">
+            <a href="index.html" class="logo" aria-label="SomoBloom Home">
+                <img src="img/logo.png" alt="SomoBloom Logo">
+            </a>
+            <div class="nav-links">
+                <a href="index.html#features">Portals</a>
+                <a href="index.html#curriculum">Curriculum</a>
+                <a href="index.html#schools">Trust</a>
+            </div>
+            <div class="nav-actions">
+                <a href="index.html" class="btn btn-outline">Back to Home</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="portal-detail-hero">
+            <div class="container">
+                <a href="index.html" class="back-link"><i class="ph-bold ph-arrow-left"></i> Back to Landing Page</a>
+                <h1 class="hero-title">Administration <span class="text-gradient">Portal</span></h1>
+                <p class="hero-subtitle">The command center for your school's operational excellence.</p>
+            </div>
+        </section>
+
+        <section class="container">
+            <div class="portal-detail-grid">
+                <div class="detail-text">
+                    <h2>Complete Operational <span class="text-gradient">Oversight</span></h2>
+                    <p>Our Administration Portal is designed to eliminate manual paperwork and provide school leaders with real-time insights into every aspect of school management.</p>
+                    <ul class="feature-list" style="margin-top: 2rem;">
+                        <li>
+                            <div class="list-icon"><i class="ph-bold ph-check"></i></div>
+                            <div>
+                                <strong>Financial Management</strong>
+                                <span>Track fee collections, generate invoices, and manage school expenses seamlessly.</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="list-icon"><i class="ph-bold ph-check"></i></div>
+                            <div>
+                                <strong>Human Resources</strong>
+                                <span>Manage teacher payroll, attendance, and performance metrics in one place.</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="list-icon"><i class="ph-bold ph-check"></i></div>
+                            <div>
+                                <strong>Inventory & Assets</strong>
+                                <span>Keep track of school supplies, textbooks, and infrastructure maintenance.</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="detail-visual">
+                    <img src="img/gallery/photo-1.jpg" alt="Admin Dashboard" class="curriculum-img" style="height: 400px; object-fit: cover;">
+                </div>
+            </div>
+
+            <div class="section-header" style="margin-top: 100px;">
+                <h2>Platform <span class="text-gradient">Gallery</span></h2>
+                <p>Visualizing the administrative power of SomoBloom.</p>
+            </div>
+
+            <div class="portal-gallery">
+                <div class="gallery-item">
+                    <img src="img/gallery/photo-5.jpg" alt="Analytics View">
+                </div>
+                <div class="gallery-item">
+                    <img src="img/gallery/photo-10.jpg" alt="Reporting Tools">
+                </div>
+                <div class="gallery-item">
+                    <img src="img/gallery/photo-13.jpg" alt="Data Management">
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section" style="margin-top: 100px;">
+            <div class="container cta-container" style="display: block; text-align: center;">
+                <h2>Empower your administration today</h2>
+                <p style="margin: 0 auto 2rem;">Get started with the most robust school management tool in Kenya.</p>
+                <div class="cta-actions" style="justify-content: center;">
+                    <a href="index.html#demoForm" class="btn btn-primary btn-large">Request a Demo</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <a href="index.html" class="logo footer-logo">
+                    <img src="img/logo.png" alt="SomoBloom Logo">
+                </a>
+                <p>The premier school management ecosystem for modern Kenyan schools.</p>
+            </div>
+            <div class="footer-links">
+                <div class="link-group">
+                    <h4>Product</h4>
+                    <a href="admin-portal.html">Admin Portal</a>
+                    <a href="teacher-portal.html">Teacher Portal</a>
+                    <a href="student-portal.html">Student Portal</a>
+                    <a href="parent-portal.html">Parent Portal</a>
+                </div>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <p>&copy; 2024 SomoBloom Africa. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
