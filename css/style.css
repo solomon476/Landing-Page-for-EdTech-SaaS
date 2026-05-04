@@ -201,7 +201,6 @@ a {
 .logo img {
     height: 60px; /* Adjust height based on uploaded image shape */
     width: auto;
-    mix-blend-mode: multiply;
 }
 
 .nav-links {
@@ -1151,11 +1150,6 @@ footer {
     color: var(--clr-text-muted);
     font-size: 0.9rem;
     max-width: 300px;
-}
-
-.footer-logo img {
-    filter: grayscale(1) invert(1) brightness(2);
-    mix-blend-mode: screen;
 }
 
 .footer-links {
