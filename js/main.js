@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function toggleMenu() {
         mobileMenu.classList.toggle('active');
-        
+
         // Swap icon between list and X
         if (mobileMenu.classList.contains('active')) {
             menuIcon.classList.remove('ph-list');
@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- Navbar Scroll Effect ---
     const navbar = document.querySelector('.navbar');
-    
+
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
             navbar.style.background = 'rgba(248, 250, 252, 0.98)';
@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Select elements to animate
     const animateElements = document.querySelectorAll('.portal-card, .curriculum-text, .glass-card, .stat-item, .cta-container');
-    
+
     // Set initial state for elements
     animateElements.forEach(el => {
         el.style.opacity = '0';
@@ -70,8 +70,8 @@ document.addEventListener('DOMContentLoaded', () => {
         el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
         observer.observe(el);
     });
-    
-    // Stagger animation for grid items based on index if desired
+
+    // Stagger animation for grid items if desired
     const portalCards = document.querySelectorAll('.portal-card');
     portalCards.forEach((card, index) => {
         card.style.transitionDelay = `${index * 0.1}s`;
@@ -93,7 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const tabRegister = document.getElementById('tab-register');
     const loginForm = document.getElementById('loginForm');
     const registerForm = document.getElementById('registerForm');
-    
+
     if (tabLogin && tabRegister) {
         tabLogin.addEventListener('click', () => {
             tabLogin.classList.add('active');
@@ -130,11 +130,11 @@ document.addEventListener('DOMContentLoaded', () => {
                     body: JSON.stringify({ email, password })
                 });
                 const data = await res.json();
-                
+
                 if (res.ok) {
                     authMessage.innerHTML = '<strong>Success!</strong> Logging you in...';
                     authMessage.className = 'form-message success';
-                    
+
                     // Store the authentication token and user profile securely
                     localStorage.setItem('somobloom_token', data.token);
                     localStorage.setItem('somobloom_user', JSON.stringify(data.user));
@@ -143,8 +143,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     setTimeout(() => {
                         const role = data.user.role;
                         let portalUrl = '';
-                        
-                        // Defaulting to standard local dev ports
+
                         switch (role) {
                             case 'admin':
                                 portalUrl = 'https://somobloom-admin.pages.dev';
@@ -159,9 +158,9 @@ document.addEventListener('DOMContentLoaded', () => {
                                 portalUrl = 'https://somobloom-parent.pages.dev';
                                 break;
                             default:
-                                portalUrl = 'http://localhost:3000';
+                                portalUrl = 'https://somobloom-admin.pages.dev';
                         }
-                        
+
                         window.location.href = portalUrl;
                     }, 1000);
                 } else {
@@ -184,7 +183,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const btn = registerForm.querySelector('button[type="submit"]');
             btn.innerHTML = 'Creating... <i class="ph-bold ph-spinner ph-spin"></i>';
             btn.disabled = true;
-            
+
             const messageEl = document.getElementById('registerMessage') || authMessage;
 
             const schoolName = document.getElementById('regSchoolName') ? document.getElementById('regSchoolName').value : 'Demo School';
@@ -199,7 +198,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     body: JSON.stringify({ schoolName, adminName: name, email, password })
                 });
                 const data = await res.json();
-                
+
                 if (res.ok) {
                     messageEl.innerHTML = '<strong>School Registered!</strong> Setting up your workspace...';
                     messageEl.className = 'form-message success';
@@ -282,21 +281,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
         function type() {
             const currentPhrase = phrases[currentPhraseIndex];
-            
+
             if (isDeleting) {
                 currentCharIndex--;
             } else {
                 currentCharIndex++;
             }
-            
+
             typewriterElement.textContent = currentPhrase.substring(0, currentCharIndex);
-            
+
             let typeSpeed = 100;
-            
+
             if (isDeleting) {
                 typeSpeed /= 2;
             }
-            
+
             if (!isDeleting && currentCharIndex === currentPhrase.length) {
                 typeSpeed = 2000;
                 isDeleting = true;
@@ -305,7 +304,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 currentPhraseIndex = (currentPhraseIndex + 1) % phrases.length;
                 typeSpeed = 500;
             }
-            
+
             setTimeout(type, typeSpeed);
         }
 
