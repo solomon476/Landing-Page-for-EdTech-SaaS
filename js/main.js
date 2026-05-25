@@ -124,7 +124,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const password = document.getElementById('loginPassword').value;
 
             try {
-                const res = await fetch('/api/auth/login', {
+                const res = await fetch('https://somobloombackend.solianwolves.com/api/auth/login', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ email, password })
@@ -134,8 +134,36 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (res.ok) {
                     authMessage.innerHTML = '<strong>Success!</strong> Logging you in...';
                     authMessage.className = 'form-message success';
-                    // Store token typically here: localStorage.setItem('token', data.token);
-                    setTimeout(() => alert('Welcome ' + data.user.name + '! Redirecting to dashboard...'), 1000);
+                    
+                    // Store the authentication token and user profile securely
+                    localStorage.setItem('somobloom_token', data.token);
+                    localStorage.setItem('somobloom_user', JSON.stringify(data.user));
+
+                    // Route the user to their specific portal based on their role
+                    setTimeout(() => {
+                        const role = data.user.role;
+                        let portalUrl = '';
+                        
+                        // Defaulting to standard local dev ports
+                        switch (role) {
+                            case 'admin':
+                                portalUrl = 'https://somobloom-admin.pages.dev';
+                                break;
+                            case 'teacher':
+                                portalUrl = 'https://somobloom-teacher.pages.dev';
+                                break;
+                            case 'student':
+                                portalUrl = 'https://somobloom-student.pages.dev';
+                                break;
+                            case 'parent':
+                                portalUrl = 'https://somobloom-parent.pages.dev';
+                                break;
+                            default:
+                                portalUrl = 'http://localhost:3000';
+                        }
+                        
+                        window.location.href = portalUrl;
+                    }, 1000);
                 } else {
                     authMessage.textContent = data.error || 'Login failed.';
                     authMessage.className = 'form-message error';
@@ -159,25 +187,24 @@ document.addEventListener('DOMContentLoaded', () => {
             
             const messageEl = document.getElementById('registerMessage') || authMessage;
 
+            const schoolName = document.getElementById('regSchoolName') ? document.getElementById('regSchoolName').value : 'Demo School';
             const name = document.getElementById('regName').value;
             const email = document.getElementById('regEmail').value;
-            const role = document.getElementById('regRole') ? document.getElementById('regRole').value : 'teacher';
             const password = document.getElementById('regPassword').value;
 
             try {
-                const res = await fetch('/api/auth/register', {
+                const res = await fetch('https://somobloombackend.solianwolves.com/api/auth/register-school', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ name, email, role, password })
+                    body: JSON.stringify({ schoolName, adminName: name, email, password })
                 });
                 const data = await res.json();
                 
                 if (res.ok) {
-                    messageEl.innerHTML = '<strong>Account Created!</strong> You can now log in.';
+                    messageEl.innerHTML = '<strong>School Registered!</strong> Setting up your workspace...';
                     messageEl.className = 'form-message success';
                     setTimeout(() => {
-                        messageEl.textContent = '';
-                        tabLogin.click();
+                        window.location.href = 'https://somobloom-admin.pages.dev';
                     }, 2500);
                 } else {
                     messageEl.textContent = data.error || 'Registration failed.';
