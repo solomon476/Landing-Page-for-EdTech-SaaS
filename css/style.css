@@ -542,12 +542,12 @@ a {
 .auth-form {
     padding: 2.5rem;
     display: none;
+    flex-direction: column;
+    gap: 1.5rem;
 }
 
 .auth-form.active-form {
     display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
 }
 
 .form-header {
@@ -1134,24 +1134,32 @@ section {
     border-radius: var(--radius-lg);
 }
 
-.cta-actions .btn-secondary {
-    background: white;
-    color: var(--clr-primary);
-}
-
-.cta-actions .btn-secondary:hover {
-    background: rgba(255,255,255,0.9);
-    transform: translateY(-2px);
-}
-
 .cta-actions .btn-primary {
-    background: var(--clr-bg);
-    border-color: var(--clr-bg);
+    background: var(--clr-surface);
+    color: var(--clr-primary);
+    border-color: var(--clr-surface);
     box-shadow: none;
 }
 
 .cta-actions .btn-primary:hover {
-    background: var(--clr-surface);
+    background: var(--clr-bg);
+    border-color: var(--clr-bg);
+    color: var(--clr-primary);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+}
+
+.cta-actions .btn-secondary {
+    background: transparent;
+    border-color: rgba(255, 255, 255, 0.6);
+    color: white;
+}
+
+.cta-actions .btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: white;
+    color: white;
+    transform: translateY(-2px);
 }
 
 /* =========================================================================
@@ -1291,6 +1299,8 @@ footer {
     .cta-actions {
         flex-direction: column;
         justify-content: center;
+        align-items: center;
+        gap: 1rem;
     }
     
     .cta-img {
@@ -1299,6 +1309,18 @@ footer {
     }
     
     .footer-content {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2.5rem;
+    }
+
+    .footer-brand {
+        min-width: 100%;
+    }
+
+    .footer-links {
+        flex-direction: column;
         gap: 2rem;
+        width: 100%;
     }
 }

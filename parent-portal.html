@@ -15,7 +15,7 @@
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
     
     <link rel="icon" type="image/png" href="img/favicon.png">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css?v=1.1">
     <style>
         .portal-detail-hero {
             padding: 160px 0 80px;
@@ -85,8 +85,20 @@
             <div class="nav-actions">
                 <a href="index.html" class="btn btn-outline">Back to Home</a>
             </div>
+            <!-- Mobile Menu Toggle -->
+            <button class="menu-toggle" aria-label="Toggle menu">
+                <i class="ph ph-list"></i>
+            </button>
         </div>
     </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu">
+        <a href="index.html#features" class="mobile-link">Portals</a>
+        <a href="index.html#curriculum" class="mobile-link">Curriculum</a>
+        <a href="index.html#schools" class="mobile-link">Trust</a>
+        <a href="index.html" class="btn btn-outline mobile-btn">Back to Home</a>
+    </div>
 
     <main>
         <section class="portal-detail-hero">
@@ -183,5 +195,6 @@
             <p>&copy; 2024 SomoBloom Africa. All rights reserved.</p>
         </div>
     </footer>
+    <script src="js/main.js?v=1.1"></script>
 </body>
 </html>

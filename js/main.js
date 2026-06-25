@@ -3,31 +3,36 @@ document.addEventListener('DOMContentLoaded', () => {
     const menuBtn = document.querySelector('.menu-toggle');
     const mobileMenu = document.querySelector('.mobile-menu');
     const mobileLinks = document.querySelectorAll('.mobile-link');
-    const menuIcon = menuBtn.querySelector('i');
 
-    function toggleMenu() {
-        mobileMenu.classList.toggle('active');
+    if (menuBtn && mobileMenu) {
+        const menuIcon = menuBtn.querySelector('i');
 
-        // Swap icon between list and X
-        if (mobileMenu.classList.contains('active')) {
-            menuIcon.classList.remove('ph-list');
-            menuIcon.classList.add('ph-x');
-        } else {
-            menuIcon.classList.remove('ph-x');
-            menuIcon.classList.add('ph-list');
-        }
-    }
+        function toggleMenu() {
+            mobileMenu.classList.toggle('active');
 
-    menuBtn.addEventListener('click', toggleMenu);
-
-    // Close menu when clicking a link
-    mobileLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            if (mobileMenu.classList.contains('active')) {
-                toggleMenu();
+            // Swap icon between list and X
+            if (menuIcon) {
+                if (mobileMenu.classList.contains('active')) {
+                    menuIcon.classList.remove('ph-list');
+                    menuIcon.classList.add('ph-x');
+                } else {
+                    menuIcon.classList.remove('ph-x');
+                    menuIcon.classList.add('ph-list');
+                }
             }
+        }
+
+        menuBtn.addEventListener('click', toggleMenu);
+
+        // Close menu when clicking a link
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (mobileMenu.classList.contains('active')) {
+                    toggleMenu();
+                }
+            });
         });
-    });
+    }
 
     // --- Navbar Scroll Effect ---
     const navbar = document.querySelector('.navbar');
@@ -98,15 +103,27 @@ document.addEventListener('DOMContentLoaded', () => {
         tabLogin.addEventListener('click', () => {
             tabLogin.classList.add('active');
             tabRegister.classList.remove('active');
-            loginForm.style.display = 'flex';
-            registerForm.style.display = 'none';
+            if (loginForm) {
+                loginForm.classList.add('active-form');
+                loginForm.style.display = 'flex';
+            }
+            if (registerForm) {
+                registerForm.classList.remove('active-form');
+                registerForm.style.display = 'none';
+            }
         });
 
         tabRegister.addEventListener('click', () => {
             tabRegister.classList.add('active');
             tabLogin.classList.remove('active');
-            registerForm.style.display = 'flex';
-            loginForm.style.display = 'none';
+            if (registerForm) {
+                registerForm.classList.add('active-form');
+                registerForm.style.display = 'flex';
+            }
+            if (loginForm) {
+                loginForm.classList.remove('active-form');
+                loginForm.style.display = 'none';
+            }
         });
     }
 
