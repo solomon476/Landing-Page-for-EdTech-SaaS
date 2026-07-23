@@ -327,4 +327,38 @@ document.addEventListener('DOMContentLoaded', () => {
 
         setTimeout(type, 1000);
     }
+
+    // --- Features Filter Tabs (features.html) ---
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const featureCards = document.querySelectorAll('.feature-detail-card');
+
+    if (filterBtns.length > 0 && featureCards.length > 0) {
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Update active tab button
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                const filterValue = btn.getAttribute('data-filter');
+
+                // Filter feature cards
+                featureCards.forEach(card => {
+                    const cardCategory = card.getAttribute('data-category');
+                    if (filterValue === 'all' || cardCategory === filterValue) {
+                        card.style.display = 'flex';
+                        setTimeout(() => {
+                            card.style.opacity = '1';
+                            card.style.transform = 'translateY(0)';
+                        }, 50);
+                    } else {
+                        card.style.opacity = '0';
+                        card.style.transform = 'translateY(20px)';
+                        setTimeout(() => {
+                            card.style.display = 'none';
+                        }, 300);
+                    }
+                });
+            });
+        });
+    }
 });
