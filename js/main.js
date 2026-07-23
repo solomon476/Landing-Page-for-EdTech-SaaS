@@ -462,4 +462,56 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+    // --- Contact Form Handling (contact.html) ---
+    const contactForm = document.getElementById('contactForm');
+    const contactFormAlert = document.getElementById('contactFormAlert');
+
+    if (contactForm) {
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            const fullName = document.getElementById('contactFullName')?.value.trim();
+            const schoolName = document.getElementById('contactSchoolName')?.value.trim();
+            const email = document.getElementById('contactEmail')?.value.trim();
+            const phone = document.getElementById('contactPhone')?.value.trim();
+            const role = document.getElementById('contactRole')?.value;
+
+            if (!fullName || !schoolName || !email || !phone || !role) {
+                if (contactFormAlert) {
+                    contactFormAlert.style.display = 'block';
+                    contactFormAlert.className = 'form-message error';
+                    contactFormAlert.textContent = 'Please complete all required fields marked with *.';
+                }
+                return;
+            }
+
+            // Success feedback simulation
+            if (contactFormAlert) {
+                contactFormAlert.style.display = 'block';
+                contactFormAlert.className = 'form-message success';
+                contactFormAlert.textContent = `Thank you, ${fullName}! Your demo request for ${schoolName} has been received. Our Nairobi EdTech team will reach out via ${phone} shortly.`;
+            }
+
+            contactForm.reset();
+        });
+    }
+
+    // --- FAQ Accordion Interactivity (contact.html) ---
+    const faqQuestions = document.querySelectorAll('.faq-question');
+    if (faqQuestions.length > 0) {
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', () => {
+                const faqItem = question.closest('.faq-item');
+                if (faqItem) {
+                    // Close other open accordion items
+                    document.querySelectorAll('.faq-item').forEach(item => {
+                        if (item !== faqItem) item.classList.remove('active');
+                    });
+
+                    faqItem.classList.toggle('active');
+                }
+            });
+        });
+    }
 });

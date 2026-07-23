@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - SomoBloom Africa School Management System</title>
+    <meta name="description" content="Get in touch with SomoBloom Africa. Request a personalized school software demo, schedule an onboard consultation, or speak to our Nairobi support team.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+    
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    
+    <link rel="icon" type="image/png" href="img/favicon.png">
+    <link rel="stylesheet" href="css/style.css?v=1.4">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container nav-content">
+            <a href="#main-content" class="skip-link">Skip to content</a>
+            <a href="index.html" class="logo" aria-label="SomoBloom Home">
+                <img src="img/logo.png" alt="SomoBloom Logo">
+            </a>
+            <div class="nav-links">
+                <a href="features.html">Features</a>
+                <a href="blog.html">Blog</a>
+                <a href="contact.html" class="active">Contact</a>
+                <a href="index.html#features">Portals</a>
+                <a href="index.html#curriculum">Curriculum</a>
+            </div>
+            <div class="nav-actions">
+                <a href="index.html" class="btn btn-outline">Back to Home</a>
+                <a href="#contactFormCard" class="btn btn-primary">Request a Demo</a>
+            </div>
+            <!-- Mobile Menu Toggle -->
+            <button class="menu-toggle" aria-label="Toggle menu">
+                <i class="ph ph-list"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu">
+        <a href="features.html" class="mobile-link">Features</a>
+        <a href="blog.html" class="mobile-link">Blog</a>
+        <a href="contact.html" class="mobile-link active">Contact</a>
+        <a href="index.html#features" class="mobile-link">Portals</a>
+        <a href="index.html#curriculum" class="mobile-link">Curriculum</a>
+        <a href="index.html" class="btn btn-outline mobile-btn">Back to Home</a>
+        <a href="#contactFormCard" class="btn btn-primary mobile-btn">Request a Demo</a>
+    </div>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Contact Hero -->
+        <header class="contact-hero">
+            <div class="container">
+                <div class="badge">
+                    <span class="badge-dot"></span> Dedicated Support & Sales
+                </div>
+                <h1 class="contact-hero-title">Let's Modernize Your <br><span class="text-gradient">School Together</span></h1>
+                <p class="contact-hero-subtitle">
+                    Have questions about CBC compliance, M-Pesa integration, or custom pricing? Our expert team in Nairobi is ready to assist you.
+                </p>
+            </div>
+        </header>
+
+        <!-- Main Contact Section -->
+        <section class="container contact-section">
+            <div class="contact-grid">
+                
+                <!-- Left Form Column -->
+                <div class="contact-form-card" id="contactFormCard">
+                    <div style="margin-bottom: 2rem;">
+                        <h2 style="font-size: 1.8rem; font-weight: 700; margin-bottom: 0.5rem;">Request a Free School Demo</h2>
+                        <p style="color: var(--clr-text-muted);">Fill out the form below and an EdTech specialist will contact you within 2 hours.</p>
+                    </div>
+
+                    <div id="contactFormAlert" class="form-message" style="display:none; padding:1rem; border-radius:var(--radius-sm); margin-bottom:1.5rem;" aria-live="polite"></div>
+
+                    <form id="contactForm" novalidate>
+                        <div class="form-grid-2">
+                            <div class="form-group">
+                                <label for="contactFullName">Full Name *</label>
+                                <input type="text" id="contactFullName" name="fullName" required placeholder="e.g. Dr. Sarah Omondi">
+                            </div>
+                            <div class="form-group">
+                                <label for="contactSchoolName">School Name *</label>
+                                <input type="text" id="contactSchoolName" name="schoolName" required placeholder="e.g. Greenwood High School">
+                            </div>
+                        </div>
+
+                        <div class="form-grid-2">
+                            <div class="form-group">
+                                <label for="contactEmail">Work Email *</label>
+                                <input type="email" id="contactEmail" name="email" required placeholder="admin@school.ac.ke">
+                            </div>
+                            <div class="form-group">
+                                <label for="contactPhone">Phone / WhatsApp *</label>
+                                <input type="tel" id="contactPhone" name="phone" required placeholder="e.g. 0712 345 678">
+                            </div>
+                        </div>
+
+                        <div class="form-grid-2">
+                            <div class="form-group">
+                                <label for="contactRole">Your Role *</label>
+                                <select id="contactRole" name="role" required style="width:100%; padding:0.85rem 1rem; border-radius:var(--radius-sm); border:1px solid #cbd5e1; font-family:var(--font-body); font-size:0.95rem; background:white;">
+                                    <option value="">Select your role...</option>
+                                    <option value="School Director / Owner">School Director / Owner</option>
+                                    <option value="Head Teacher / Principal">Head Teacher / Principal</option>
+                                    <option value="Bursar / Financial Officer">Bursar / Financial Officer</option>
+                                    <option value="IT / System Administrator">IT / System Administrator</option>
+                                    <option value="Teacher">Teacher</option>
+                                    <option value="Parent">Parent</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="contactLocation">County / City *</label>
+                                <input type="text" id="contactLocation" name="location" required placeholder="e.g. Nairobi, Nakuru, Mombasa">
+                            </div>
+                        </div>
+
+                        <div class="form-group" style="margin-top: 0.5rem;">
+                            <label>Modules of Interest (Select all that apply):</label>
+                            <div class="checkbox-group-grid">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="modules" value="Student Information">
+                                    Student Management
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="modules" value="Attendance SMS">
+                                    Attendance SMS Alerts
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="modules" value="CBC Report Cards">
+                                    CBC & KNEC Reports
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="modules" value="Fee Payments">
+                                    M-Pesa Fee Collection
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="modules" value="Timetabling">
+                                    Timetable Generator
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="modules" value="Parent App">
+                                    Parent Portal & Messaging
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-group" style="margin-top: 1.25rem;">
+                            <label for="contactMessage">Additional Notes or Questions</label>
+                            <textarea id="contactMessage" name="message" rows="4" placeholder="Tell us about your school size, current challenges, or preferred demo time..." style="width:100%; padding:0.85rem 1rem; border-radius:var(--radius-sm); border:1px solid #cbd5e1; font-family:var(--font-body); font-size:0.95rem; resize:vertical;"></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-full btn-large" style="margin-top: 1rem;">
+                            Submit Demo Request <i class="ph-bold ph-paper-plane-tilt"></i>
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Right Sidebar Column (Contact Cards) -->
+                <div class="contact-info-wrapper">
+                    
+                    <!-- Head Office Card -->
+                    <div class="info-card">
+                        <div class="info-icon-box icon-blue">
+                            <i class="ph-duotone ph-buildings"></i>
+                        </div>
+                        <div class="info-details">
+                            <h4>Nairobi Headquarters</h4>
+                            <p>
+                                SomoBloom Africa Tech Hub<br>
+                                4th Floor, Westlands Commercial Center<br>
+                                Ring Road Westlands, Nairobi, Kenya
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Phone Support Card -->
+                    <div class="info-card">
+                        <div class="info-icon-box icon-emerald">
+                            <i class="ph-duotone ph-phone-call"></i>
+                        </div>
+                        <div class="info-details">
+                            <h4>Phone & WhatsApp</h4>
+                            <p>
+                                <strong>Sales:</strong> +254 (0) 700 123 456<br>
+                                <strong>Support:</strong> +254 (0) 20 800 9000<br>
+                                <em>Mon – Fri: 8:00 AM – 5:00 PM EAT</em>
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Email Support Card -->
+                    <div class="info-card">
+                        <div class="info-icon-box icon-purple">
+                            <i class="ph-duotone ph-envelope-simple-open"></i>
+                        </div>
+                        <div class="info-details">
+                            <h4>Email Communications</h4>
+                            <p>
+                                <strong>Inquiries:</strong> info@somobloom.co.ke<br>
+                                <strong>Support:</strong> support@somobloom.co.ke
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Visual Location Map Card -->
+                    <div style="background:#ffffff; border:1px solid #cbd5e1; border-radius:var(--radius-lg); overflow:hidden; box-shadow:0 4px 15px rgba(0,0,0,0.04);">
+                        <div style="background:linear-gradient(135deg, #1e293b, #0f172a); color:white; padding:1.25rem 1.5rem; display:flex; justify-content:space-between; align-items:center;">
+                            <span style="font-size:0.9rem; font-weight:600;"><i class="ph-bold ph-map-pin" style="color:#10b981;"></i> Nairobi HQ Map</span>
+                            <span class="preview-status-badge status-success">Open for Visits</span>
+                        </div>
+                        <div style="padding:1.5rem; background:#f8fafc; text-align:center;">
+                            <img src="img/gallery/photo-7.jpg" alt="SomoBloom Nairobi Office" style="width:100%; height:180px; object-fit:cover; border-radius:var(--radius-md); margin-bottom:1rem;">
+                            <p style="font-size:0.88rem; color:var(--clr-text-muted);">Visitors welcome by appointment. Free parking available at Westlands Commercial Center.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq-section" style="background: rgba(241, 245, 249, 0.6);">
+            <div class="container">
+                <div class="faq-header">
+                    <span class="badge"><span class="badge-dot"></span> Common Questions</span>
+                    <h2 style="font-size: 2.5rem; font-weight: 800; margin-top: 0.5rem;">Frequently Asked Questions</h2>
+                    <p style="color: var(--clr-text-muted); max-width: 600px; margin: 0.5rem auto 0;">Quick answers regarding setup, deployment, training, and security.</p>
+                </div>
+
+                <div class="faq-accordion" id="faqAccordion">
+                    
+                    <div class="faq-item active">
+                        <button class="faq-question">
+                            <span>1. How long does full system setup take for a school?</span>
+                            <i class="ph-bold ph-caret-down faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Most schools complete onboard provisioning and student data import within 48 to 72 hours. Our dedicated Nairobi support team handles data migration from Excel or previous software for free.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>2. Is SomoBloom fully compliant with KNEC & CBC standards?</span>
+                            <i class="ph-bold ph-caret-down faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Yes. SomoBloom is engineered specifically for the Kenyan curriculum shift, supporting both CBC rubric assessments (EE, ME, AE, BE) and traditional Secondary/Primary 8-4-4 grading formats.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>3. How does M-Pesa Paybill integration work?</span>
+                            <i class="ph-bold ph-caret-down faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>We connect directly with Safaricom Daraja API. When a parent pays via your school's Paybill or Till Number, the funds auto-reconcile to the specific student's ledger and issue an SMS receipt instantly.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>4. Is staff training included with our subscription?</span>
+                            <i class="ph-bold ph-caret-down faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Absolutely. We provide unlimited remote training for teachers, bursars, and administrators, plus on-site onboarding for schools in Nairobi, Kiambu, Machakos, Nakuru, and Mombasa.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <a href="index.html" class="logo footer-logo" aria-label="SomoBloom Home">
+                    <img src="img/logo.png" alt="SomoBloom Logo">
+                </a>
+                <p>The premier school management ecosystem for modern Kenyan schools.</p>
+            </div>
+            <div class="footer-links">
+                <div class="link-group">
+                    <h4>Direct Contact</h4>
+                    <a href="contact.html">Schedule Demo</a>
+                    <a href="contact.html">Nairobi Head Office</a>
+                    <a href="contact.html">WhatsApp Support</a>
+                    <a href="contact.html">Sales Inquiries</a>
+                </div>
+                <div class="link-group">
+                    <h4>Explore</h4>
+                    <a href="features.html">Key Features</a>
+                    <a href="blog.html">Blog & Insights</a>
+                    <a href="admin-portal.html">Admin Portal</a>
+                    <a href="parent-portal.html">Parent Portal</a>
+                </div>
+                <div class="link-group">
+                    <h4>Legal & Security</h4>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <p>&copy; 2024 SomoBloom Africa. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js?v=1.4"></script>
+</body>
+</html>
