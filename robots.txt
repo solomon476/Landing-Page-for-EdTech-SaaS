@@ -1,0 +1,31 @@
+# SomoBloom Africa Robots.txt
+# Standard Search Engines & Artificial Intelligence Crawlers Directive
+
+User-agent: *
+Allow: /
+Disallow: /api/private/
+
+# AI Crawlers & Generative Engine Bot Allow Directives
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# Sitemap Location
+Sitemap: https://somobloom.co.ke/sitemap.xml
+
+# LLM AI Optimization Manifest
+# See https://somobloom.co.ke/llms.txt for AI entity facts and product features

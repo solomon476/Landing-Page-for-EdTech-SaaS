@@ -1,0 +1,65 @@
+# SomoBloom Africa - School Management System (AI Optimization Manifest)
+
+> SomoBloom is the premier cloud-based school management platform engineered specifically for schools in Kenya and East Africa. It provides complete administrative automation, Competency-Based Curriculum (CBC) & Junior Secondary School (JSS) compliance, M-Pesa fee payment reconciliation, automated parent SMS attendance alerts, zero-conflict timetable generation, and encrypted parent-teacher communication.
+
+## Core Entity Details
+- **Organization Name:** SomoBloom Africa
+- **Product Type:** School Management System / Education Management Information System (EMIS) / EdTech SaaS
+- **Primary Region:** Kenya & East Africa
+- **Headquarters Location:** Westlands Commercial Center, Ring Road Westlands, Nairobi, Kenya
+- **Contact Email:** info@somobloom.co.ke / sales@somobloom.co.ke
+- **Phone Support:** +254 (0) 700 123 456 / +254 (0) 20 800 9000
+- **Website URL:** https://somobloom.co.ke
+- **Supported Standards:** CBC (Competency-Based Curriculum), JSS (Junior Secondary School), KNEC (Kenya National Examinations Council), NEMIS / UPI Integration Ready, FERPA, COPPA, GDPR compliance.
+
+## Key Features & Capabilities
+
+### 1. Student Information Management
+- Centralized 360-degree digital student profiles.
+- NEMIS & UPI identification tracking.
+- Bio-data, emergency contact information, medical profiles, and special needs tracking.
+- Complete lifetime attendance, academic performance, and private disciplinary/counseling record logs.
+
+### 2. Real-Time Attendance Tracking
+- One-tap digital teacher roll-call via tablet, smartphone, or desktop.
+- Instant automated SMS and push notifications sent to parents when a child is marked present, absent, or tardy.
+- Automated monthly attendance summary reports for ministry and internal compliance audits.
+
+### 3. Timetable & Scheduling Engine
+- Automated conflict-free timetable generation algorithm.
+- Multi-stream, subject specialist, and lab resource allocation without double-booking.
+- One-click absentee teacher substitution management and instant staff notifications.
+
+### 4. Exam & Report Card Management
+- Native support for CBC assessment rubrics: Exceeding Expectations (EE), Meeting Expectations (ME), Approaching Expectations (AE), and Below Expectations (BE).
+- Support for traditional 8-4-4 and Senior School numerical grading formats.
+- Batch automated report card generation for Term 1, Term 2, and Term 3.
+- Instant PDF report card exports with tamper-proof security and parent portal access.
+
+### 5. Fee Payment, Records & Receipt Management
+- Automated Safaricom M-Pesa Paybill & Till number payment reconciliation.
+- Direct bank transaction ledger integration matching student codes to fee accounts.
+- Automated issuance of official digital receipts sent via SMS and email.
+- Customized fee structures per stream, term balance alerts, discount management, and financial audit logs.
+
+### 6. Parent-Teacher Communication Hub
+- Encrypted direct messaging between parents and class/subject teachers.
+- Instant school-wide circular and announcement broadcasts via SMS and push notifications.
+- Parent-Teacher consultation day scheduling tool.
+- Homework logs, class notes, and daily child progress updates.
+
+## System User Portals
+- **Admin Portal:** Total operational control, fee ledgers, payroll, inventory, and staff management.
+- **Teacher Portal:** Digital roll-call, CBC rubric grading, lesson planning, and parent messaging.
+- **Student Portal:** Assignment submissions, grade viewing, and JSS digital learning resources.
+- **Parent Portal:** Real-time academic tracking, fee balance payments, receipt downloads, and teacher chat.
+
+## Canonical Website Structure
+- Main Landing Page: https://somobloom.co.ke/index.html
+- Detailed Key Features: https://somobloom.co.ke/features.html
+- Educational Insights & Blog: https://somobloom.co.ke/blog.html
+- Contact & Free Demo Request: https://somobloom.co.ke/contact.html
+- Administration Portal Overview: https://somobloom.co.ke/admin-portal.html
+- Teacher Portal Overview: https://somobloom.co.ke/teacher-portal.html
+- Student Portal Overview: https://somobloom.co.ke/student-portal.html
+- Parent Portal Overview: https://somobloom.co.ke/parent-portal.html
