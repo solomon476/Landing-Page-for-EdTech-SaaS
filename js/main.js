@@ -361,4 +361,105 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+
+    // --- Blog Search & Category Filtering (blog.html) ---
+    const blogSearchInput = document.getElementById('blogSearchInput');
+    const blogFilterBtns = document.querySelectorAll('[data-blog-filter]');
+    const blogCards = document.querySelectorAll('.blog-card');
+    const featuredCard = document.querySelector('.featured-article-card');
+
+    if (blogCards.length > 0) {
+        let activeCategory = 'all';
+
+        function filterArticles() {
+            const query = blogSearchInput ? blogSearchInput.value.toLowerCase().trim() : '';
+
+            blogCards.forEach(card => {
+                const category = card.getAttribute('data-blog-category');
+                const title = card.querySelector('.blog-card-title').textContent.toLowerCase();
+                const excerpt = card.querySelector('.blog-card-excerpt').textContent.toLowerCase();
+                const searchText = card.getAttribute('data-search-text') || '';
+
+                const matchesCategory = (activeCategory === 'all' || category === activeCategory);
+                const matchesQuery = query === '' || title.includes(query) || excerpt.includes(query) || searchText.includes(query);
+
+                if (matchesCategory && matchesQuery) {
+                    card.style.display = 'flex';
+                    card.style.opacity = '1';
+                } else {
+                    card.style.display = 'none';
+                    card.style.opacity = '0';
+                }
+            });
+
+            if (featuredCard) {
+                const featCategory = featuredCard.getAttribute('data-blog-category');
+                const featTitle = featuredCard.querySelector('.featured-title').textContent.toLowerCase();
+                const featExcerpt = featuredCard.querySelector('.featured-excerpt').textContent.toLowerCase();
+
+                const matchesCategory = (activeCategory === 'all' || featCategory === activeCategory);
+                const matchesQuery = query === '' || featTitle.includes(query) || featExcerpt.includes(query);
+
+                if (matchesCategory && matchesQuery) {
+                    featuredCard.style.display = 'grid';
+                } else {
+                    featuredCard.style.display = 'none';
+                }
+            }
+        }
+
+        if (blogSearchInput) {
+            blogSearchInput.addEventListener('input', filterArticles);
+        }
+
+        blogFilterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                blogFilterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                activeCategory = btn.getAttribute('data-blog-filter');
+                filterArticles();
+            });
+        });
+    }
+
+    // --- Article Modal Reader Interactivity ---
+    const articleModalOverlay = document.getElementById('articleModalOverlay');
+    const closeModalBtn = document.getElementById('closeModalBtn');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalCategory = document.getElementById('modalCategory');
+    const modalMeta = document.getElementById('modalMeta');
+    const readModalBtns = document.querySelectorAll('.read-modal-btn');
+
+    if (articleModalOverlay && readModalBtns.length > 0) {
+        readModalBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const title = btn.getAttribute('data-title');
+                const category = btn.getAttribute('data-category');
+                const author = btn.getAttribute('data-author');
+                const readtime = btn.getAttribute('data-readtime');
+                const date = btn.getAttribute('data-date');
+
+                if (modalTitle) modalTitle.textContent = title;
+                if (modalCategory) modalCategory.textContent = category;
+                if (modalMeta) modalMeta.textContent = `${author} • ${date} • ${readtime}`;
+
+                articleModalOverlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+
+        if (closeModalBtn) {
+            closeModalBtn.addEventListener('click', () => {
+                articleModalOverlay.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        }
+
+        articleModalOverlay.addEventListener('click', (e) => {
+            if (e.target === articleModalOverlay) {
+                articleModalOverlay.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+    }
 });

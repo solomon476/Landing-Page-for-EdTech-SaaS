@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog & Insights - SomoBloom Africa School Management System</title>
+    <meta name="description" content="Read the latest insights on school administration, CBC & JSS transition strategies, automated fee collection, and parent-teacher communication in Kenyan schools.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+    
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    
+    <link rel="icon" type="image/png" href="img/favicon.png">
+    <link rel="stylesheet" href="css/style.css?v=1.3">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container nav-content">
+            <a href="#main-content" class="skip-link">Skip to content</a>
+            <a href="index.html" class="logo" aria-label="SomoBloom Home">
+                <img src="img/logo.png" alt="SomoBloom Logo">
+            </a>
+            <div class="nav-links">
+                <a href="features.html">Features</a>
+                <a href="blog.html" class="active">Blog</a>
+                <a href="index.html#features">Portals</a>
+                <a href="index.html#curriculum">Curriculum</a>
+            </div>
+            <div class="nav-actions">
+                <a href="index.html" class="btn btn-outline">Back to Home</a>
+                <a href="index.html#demoForm" class="btn btn-primary">Get a Demo</a>
+            </div>
+            <!-- Mobile Menu Toggle -->
+            <button class="menu-toggle" aria-label="Toggle menu">
+                <i class="ph ph-list"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu">
+        <a href="features.html" class="mobile-link">Features</a>
+        <a href="blog.html" class="mobile-link active">Blog</a>
+        <a href="index.html#features" class="mobile-link">Portals</a>
+        <a href="index.html#curriculum" class="mobile-link">Curriculum</a>
+        <a href="index.html" class="btn btn-outline mobile-btn">Back to Home</a>
+        <a href="index.html#demoForm" class="btn btn-primary mobile-btn">Get a Demo</a>
+    </div>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Blog Hero -->
+        <header class="blog-hero">
+            <div class="container">
+                <div class="badge">
+                    <span class="badge-dot"></span> SomoBloom Knowledge Hub
+                </div>
+                <h1 class="blog-hero-title">Insights for Forward-Thinking <br><span class="text-gradient">School Leaders</span></h1>
+                <p class="blog-hero-subtitle">
+                    Practical guides, administrative strategies, CBC transition blueprints, and edtech innovations tailored for Kenyan schools.
+                </p>
+
+                <!-- Search Bar -->
+                <div class="blog-search-box">
+                    <i class="ph-bold ph-magnifying-glass blog-search-icon"></i>
+                    <input type="text" id="blogSearchInput" class="blog-search-input" placeholder="Search articles by topic, keyword, or category...">
+                </div>
+
+                <!-- Category Filter Pills -->
+                <div class="features-filter-wrapper">
+                    <button class="filter-btn active" data-blog-filter="all">
+                        <i class="ph-bold ph-squares-four"></i> All Articles
+                    </button>
+                    <button class="filter-btn" data-blog-filter="cbc">
+                        <i class="ph-bold ph-book-open"></i> CBC & JSS
+                    </button>
+                    <button class="filter-btn" data-blog-filter="admin">
+                        <i class="ph-bold ph-buildings"></i> Administration
+                    </button>
+                    <button class="filter-btn" data-blog-filter="finance">
+                        <i class="ph-bold ph-wallet"></i> Finance & Fees
+                    </button>
+                    <button class="filter-btn" data-blog-filter="parents">
+                        <i class="ph-bold ph-users-three"></i> Parent Engagement
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Featured Article -->
+        <section class="container featured-blog-section">
+            <article class="featured-article-card" data-blog-category="cbc">
+                <div class="featured-img-container">
+                    <img src="img/gallery/photo-1.jpg" alt="Navigating Junior Secondary School Transition">
+                </div>
+                <div class="featured-content">
+                    <span class="blog-tag">Featured Guide</span>
+                    <h2 class="featured-title">Navigating JSS Transition: Essential Strategies for School Directors in Kenya</h2>
+                    <p class="featured-excerpt">
+                        As Junior Secondary School implementation progresses across Kenya, administrators face unique challenges in resource management, lab scheduling, and continuous assessment reporting. Here are 5 proven steps to stay compliant and ahead.
+                    </p>
+                    <div class="author-meta" style="justify-content: space-between; margin-top: 1rem;">
+                        <div style="display:flex; align-items:center; gap:0.75rem;">
+                            <div class="author-avatar">SO</div>
+                            <div>
+                                <strong style="display:block; color:var(--clr-text);">Dr. Sarah Omondi</strong>
+                                <span style="font-size:0.8rem;">Senior Educational Consultant • 6 min read</span>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary read-modal-btn" data-title="Navigating JSS Transition: Essential Strategies for School Directors in Kenya" data-category="CBC & JSS Transition" data-author="Dr. Sarah Omondi" data-readtime="6 min read" data-date="July 18, 2024">
+                            Read Article <i class="ph-bold ph-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <!-- Blog Grid -->
+        <section class="container blog-grid-section">
+            <div class="blog-grid" id="blogGrid">
+
+                <!-- Article 1 -->
+                <article class="blog-card" data-blog-category="admin" data-search-text="attendance sms parent tracking roll-call">
+                    <img src="img/gallery/photo-2.jpg" alt="Automated Roll Call" class="blog-card-img">
+                    <div class="blog-card-body">
+                        <div>
+                            <span class="blog-tag">Administration</span>
+                            <h3 class="blog-card-title">How Automated Roll-Call Boosts Parent Trust & Attendance</h3>
+                            <p class="blog-card-excerpt">
+                                Manual roll-call registers leave blind spots. Discover how real-time digital attendance alerts eliminate student absenteeism and build parent satisfaction.
+                            </p>
+                        </div>
+                        <div class="blog-card-footer">
+                            <span>July 14, 2024 • 4 min read</span>
+                            <button class="read-btn read-modal-btn" data-title="How Automated Roll-Call Boosts Parent Trust & Attendance" data-category="Administration" data-author="James Mutua" data-readtime="4 min read" data-date="July 14, 2024">
+                                Read <i class="ph-bold ph-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Article 2 -->
+                <article class="blog-card" data-blog-category="cbc" data-search-text="cbc formative assessment rubric knec grading">
+                    <img src="img/gallery/photo-3.jpg" alt="CBC Formative Assessment" class="blog-card-img">
+                    <div class="blog-card-body">
+                        <div>
+                            <span class="blog-tag">CBC & JSS</span>
+                            <h3 class="blog-card-title">CBC Formative Assessment: Streamlining Rubrics Without Paper Overload</h3>
+                            <p class="blog-card-excerpt">
+                                Transitioning from traditional letter marks to competency rubrics (EE, ME, AE, BE) doesn't mean drowning in paperwork. Here is how modern software solves it.
+                            </p>
+                        </div>
+                        <div class="blog-card-footer">
+                            <span>July 10, 2024 • 5 min read</span>
+                            <button class="read-btn read-modal-btn" data-title="CBC Formative Assessment: Streamlining Rubrics Without Paper Overload" data-category="CBC & JSS" data-author="Grace Njeri" data-readtime="5 min read" data-date="July 10, 2024">
+                                Read <i class="ph-bold ph-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Article 3 -->
+                <article class="blog-card" data-blog-category="finance" data-search-text="mpesa fee paybill reconciliation receipt ledger">
+                    <img src="img/gallery/photo-4.jpg" alt="M-Pesa Fee Automation" class="blog-card-img">
+                    <div class="blog-card-body">
+                        <div>
+                            <span class="blog-tag">Finance & Fees</span>
+                            <h3 class="blog-card-title">M-Pesa Paybill Automation: Eliminating Fee Ledger Discrepancies</h3>
+                            <p class="blog-card-excerpt">
+                                Unidentified M-Pesa payments waste hours during term opening. Learn how direct Paybill API integration updates student ledgers instantly.
+                            </p>
+                        </div>
+                        <div class="blog-card-footer">
+                            <span>June 28, 2024 • 5 min read</span>
+                            <button class="read-btn read-modal-btn" data-title="M-Pesa Paybill Automation: Eliminating Fee Ledger Discrepancies" data-category="Finance & Fees" data-author="David Kimani" data-readtime="5 min read" data-date="June 28, 2024">
+                                Read <i class="ph-bold ph-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Article 4 -->
+                <article class="blog-card" data-blog-category="admin" data-search-text="timetable scheduling room allocation teacher conflict">
+                    <img src="img/gallery/photo-5.jpg" alt="Smart Timetable Scheduling" class="blog-card-img">
+                    <div class="blog-card-body">
+                        <div>
+                            <span class="blog-tag">Administration</span>
+                            <h3 class="blog-card-title">Optimizing Teacher Timetables with Zero Schedule Clashes</h3>
+                            <p class="blog-card-excerpt">
+                                Designing timetables for multiple streams and lab sessions can take weeks. Discover how algorithmic scheduling generates conflict-free timetables in minutes.
+                            </p>
+                        </div>
+                        <div class="blog-card-footer">
+                            <span>June 20, 2024 • 4 min read</span>
+                            <button class="read-btn read-modal-btn" data-title="Optimizing Teacher Timetables with Zero Schedule Clashes" data-category="Administration" data-author="Tr. Peter Wambua" data-readtime="4 min read" data-date="June 20, 2024">
+                                Read <i class="ph-bold ph-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Article 5 -->
+                <article class="blog-card" data-blog-category="parents" data-search-text="parent teacher communication messaging portal engagement">
+                    <img src="img/gallery/photo-6.jpg" alt="Parent Teacher Communication" class="blog-card-img">
+                    <div class="blog-card-body">
+                        <div>
+                            <span class="blog-tag">Parent Engagement</span>
+                            <h3 class="blog-card-title">Building Stronger Parent-Teacher Partnerships in the Digital Era</h3>
+                            <p class="blog-card-excerpt">
+                                Active parent involvement directly correlates with student success. Learn how dedicated parent portals create transparent channels for progress updates.
+                            </p>
+                        </div>
+                        <div class="blog-card-footer">
+                            <span>June 15, 2024 • 6 min read</span>
+                            <button class="read-btn read-modal-btn" data-title="Building Stronger Parent-Teacher Partnerships in the Digital Era" data-category="Parent Engagement" data-author="Amina Hassan" data-readtime="6 min read" data-date="June 15, 2024">
+                                Read <i class="ph-bold ph-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Article 6 -->
+                <article class="blog-card" data-blog-category="admin" data-search-text="data privacy security ferpa coppa compliance">
+                    <img src="img/gallery/photo-9.jpg" alt="Data Security Compliance" class="blog-card-img">
+                    <div class="blog-card-body">
+                        <div>
+                            <span class="blog-tag">Administration</span>
+                            <h3 class="blog-card-title">Data Protection & Privacy Compliance for East African Schools</h3>
+                            <p class="blog-card-excerpt">
+                                Protecting sensitive student records and financial data is mandatory. Understand key data security standards and compliance safeguards every school needs.
+                            </p>
+                        </div>
+                        <div class="blog-card-footer">
+                            <span>June 02, 2024 • 7 min read</span>
+                            <button class="read-btn read-modal-btn" data-title="Data Protection & Privacy Compliance for East African Schools" data-category="Administration" data-author="Dr. Sarah Omondi" data-readtime="7 min read" data-date="June 02, 2024">
+                                Read <i class="ph-bold ph-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- Newsletter Subscription Banner -->
+        <section class="container">
+            <div class="newsletter-banner">
+                <span class="badge" style="background:rgba(255,255,255,0.15); color:white; margin-bottom:1rem;">
+                    <i class="ph-bold ph-envelope-simple"></i> Weekly Newsletter
+                </span>
+                <h2 style="font-size: 2.2rem; margin-bottom: 0.75rem;">Stay Informed on School Management Innovations</h2>
+                <p style="color: #94a3b8; max-width: 600px; margin: 0 auto;">Join over 1,200 school directors, principals, and teachers receiving our bi-weekly insights digest.</p>
+                <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Thank you for subscribing to SomoBloom Insights!');">
+                    <input type="email" class="newsletter-input" placeholder="Enter your school email address..." required>
+                    <button type="submit" class="btn btn-primary">Subscribe</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Interactive Article Modal Reader -->
+    <div id="articleModalOverlay" class="article-modal-overlay" role="dialog" aria-modal="true">
+        <div class="article-modal-container">
+            <button id="closeModalBtn" class="modal-close-btn" aria-label="Close article reader">
+                <i class="ph-bold ph-x"></i>
+            </button>
+            <div style="margin-bottom: 1.5rem;">
+                <span id="modalCategory" class="blog-tag">Category</span>
+                <h2 id="modalTitle" style="font-size: 2.2rem; font-weight: 800; margin: 0.75rem 0 0.5rem; line-height: 1.25;">Article Title</h2>
+                <p id="modalMeta" style="color: var(--clr-text-muted); font-size: 0.9rem;">Author • Date • Read Time</p>
+            </div>
+            
+            <div class="modal-article-body">
+                <p class="lead" style="font-size: 1.15rem; font-weight: 500; color: #1e293b;">
+                    Modern school administration requires moving away from fragmented paper registers and manual spreadsheets towards unified digital workflows built for speed, transparency, and compliance.
+                </p>
+
+                <div class="article-takeaway-box">
+                    <strong style="color: var(--clr-primary); font-size: 1rem;"><i class="ph-bold ph-lightbulb"></i> Key Administrative Takeaway</strong>
+                    <p style="margin: 0.35rem 0 0; color: var(--clr-text); font-size: 0.95rem;">
+                        Automating core operational tasks—ranging from roll-call SMS alerts to M-Pesa fee reconciliation—reduces administrative overhead by up to 70% and builds immediate parent trust.
+                    </p>
+                </div>
+
+                <h3>1. Streamlining Operations and Reducing Human Error</h3>
+                <p>
+                    When teachers manually enter grades or record attendance on paper sheets, data entry mistakes and delayed updates inevitably occur. By centralizing records into SomoBloom's integrated database, attendance marked during morning registration immediately reflects across student profiles, parent notifications, and ministry compliance logs.
+                </p>
+
+                <h3>2. Enhancing Financial Accountability</h3>
+                <p>
+                    Manual bank receipt verification often leads to long queues during term openings and reconciliation backlogs. Automated M-Pesa Paybill matching matches incoming transactions directly to student accounts using unique student codes, eliminating missing payments and issuing instant digital receipts via SMS.
+                </p>
+
+                <h3>3. Preparing for Continuous Curriculum Updates</h3>
+                <p>
+                    As the Ministry of Education updates assessment frameworks and Junior Secondary School guidelines, having a cloud-based software partner ensures your school's grading templates and KNEC report exports remain 100% compliant without buying new software modules.
+                </p>
+            </div>
+
+            <div style="margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid #e2e8f0; display: flex; justify-content: space-between; align-items: center;">
+                <div style="font-size: 0.9rem; color: var(--clr-text-muted);">
+                    <strong>SomoBloom Editorial Team</strong> • Published for Kenyan Educators
+                </div>
+                <button onclick="document.getElementById('articleModalOverlay').classList.remove('active');" class="btn btn-outline">
+                    Close Article
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <a href="index.html" class="logo footer-logo" aria-label="SomoBloom Home">
+                    <img src="img/logo.png" alt="SomoBloom Logo">
+                </a>
+                <p>The premier school management ecosystem for modern Kenyan schools.</p>
+            </div>
+            <div class="footer-links">
+                <div class="link-group">
+                    <h4>Blog Categories</h4>
+                    <a href="blog.html">CBC & JSS Transition</a>
+                    <a href="blog.html">School Administration</a>
+                    <a href="blog.html">Fee & M-Pesa Management</a>
+                    <a href="blog.html">Parent Engagement</a>
+                </div>
+                <div class="link-group">
+                    <h4>Product</h4>
+                    <a href="features.html">Key Features</a>
+                    <a href="admin-portal.html">Admin Portal</a>
+                    <a href="teacher-portal.html">Teacher Portal</a>
+                    <a href="student-portal.html">Student Portal</a>
+                    <a href="parent-portal.html">Parent Portal</a>
+                </div>
+                <div class="link-group">
+                    <h4>Legal & Trust</h4>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <p>&copy; 2024 SomoBloom Africa. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js?v=1.3"></script>
+</body>
+</html>
