@@ -40,7 +40,7 @@
 - Automated Safaricom M-Pesa Paybill & Till number payment reconciliation.
 - Direct bank transaction ledger integration matching student codes to fee accounts.
 - Automated issuance of official digital receipts sent via SMS and email.
-- Customized fee structures per stream, term balance alerts, discount management, and financial audit logs.
+- Customized fee structures, term balance alerts, , and financial audit logs.
 
 ### 6. Parent-Teacher Communication Hub
 - Encrypted direct messaging between parents and class/subject teachers.
